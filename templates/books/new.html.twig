@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Book{% endblock %}
+
+{% block body %}
+    <h1 class="title">Добавление книги</h1>
+    {{ form_start(form) }}
+    {{ form_label(form.name, 'Имя') }}
+    {{ form_errors(form.name) }}
+    {{ form_widget(form.name) }}
+    {{ form_label(form.author, 'Автор') }}
+    {{ form_errors(form.author) }}
+    {{ form_widget(form.author) }}
+    {{ form_label(form.year, 'Год') }}
+    {{ form_errors(form.year) }}
+    {{ form_widget(form.year) }}
+    {{ form_end(form) }}
+{% endblock %}

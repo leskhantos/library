@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books{% endblock %}
+
+{% block body %}
+  <h1 class="title">Список книг</h1>
+  {% if books %}
+    <table id="books" class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Имя</th>
+          <th>Год</th>
+          <th>Автор</th>
+          <th><span class="icon">
+  <i class="fas fa-edit"></i>
+</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+          <tr>
+            <td>{{ book.name }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.year|date('Y')  }}</td>
+            <td>
+              <a href="/book/edit/{{ book.id }}" class="button is-warning">Редактировать</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Нету книг</p>
+  {% endif %}
+{% endblock %}
