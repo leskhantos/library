@@ -18,6 +18,3 @@ Run migrations
 ```
 php bin/console doctrine:migrations:migrate
 ```
-## Contributing
-Pull requests are welcome. 
-
